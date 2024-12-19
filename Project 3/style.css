@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right,#1ba7d5,#06D6A0);
+}
+.main{
+  width: 600px;
+  height: 250px;
+  padding: 25px;
+  background-color: white;
+  box-shadow: 5px 5px 15px black;
+}
+.inputs{
+  margin-top:40px ;
+  padding-bottom:2rem;
+  border-bottom: 1px solid gray;
+}
+.inputs label{
+  color: blue;
+}
+#calculate{
+  background-color:  rgb(255, 96, 123);
+  border: 1.5px solid black;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+.result{
+  margin-top: 20px;
+}
+#Age{
+  font-size: 1.5rem;
+}
