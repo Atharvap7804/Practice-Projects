@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment - AnON</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .payment-container {
+      max-width: 750px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+      animation: slideIn 0.6s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .payment-container h2 {
+      margin-bottom: 25px;
+      font-size: 30px;
+      text-align: center;
+      color: #2c3e50;
+    }
+    .total-amount {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #0d6efd;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .payment-option:hover {
+      background-color: #f1f1f1;
+    }
+    .payment-option input[type="radio"] {
+      margin-right: 15px;
+      accent-color: #0d6efd;
+    }
+    .method-details {
+      display: none;
+      margin-top: 10px;
+      padding-left: 35px;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .method-details input {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .qr-img {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    .confirm-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .confirm-btn:hover {
+      background-color: #084298;
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Select Payment Method</h2>
+    <div class="total-amount">Total Amount: <strong id="paymentAmount">Rs.0</strong></div>
+
+    <label class="payment-option">
+      <input type="radio" name="payment" value="card" onclick="showMethod('card')" /> Debit / Credit Card
+    </label>
+    <div class="method-details" id="card">
+      <input type="text" placeholder="Card Number" />
+      <input type="text" placeholder="Name on Card" />
+      <input type="text" placeholder="Expiry (MM/YY)" />
+      <input type="text" placeholder="CVV" />
+    </div>
+
+    <label class="payment-option">
+      <input type="radio" name="payment" value="upi" onclick="showMethod('upi')" /> UPI ID
+    </label>
+    <div class="method-details" id="upi">
+      <input type="text" placeholder="Enter your UPI ID" />
+    </div>
+
+    <label class="payment-option">
+      <input type="radio" name="payment" value="qr" onclick="showMethod('qr')" /> Scan & Pay (QR Code)
+    </label>
+    <div class="method-details" id="qr">
+      <img id="qr-code" class="qr-img" src="" alt="UPI QR Code" />
+    </div>
+
+    <label class="payment-option">
+      <input type="radio" name="payment" value="cod" onclick="showMethod('cod')" /> Cash on Delivery
+    </label>
+    <div class="method-details" id="cod">
+      <p><strong>Pay with cash when your order is delivered.</strong></p>
+    </div>
+
+    <button class="confirm-btn" onclick="confirmPayment()">Confirm Payment</button>
+  </div>
+
+  <script>
+    const total = localStorage.getItem('cartTotal') || '0';
+    document.getElementById('paymentAmount').textContent = 'Rs.' + total;
+
+    const methods = ['card', 'upi', 'qr', 'cod'];
+    function showMethod(method) {
+      methods.forEach(id => {
+        document.getElementById(id).style.display = id === method ? 'block' : 'none';
+      });
+    }
+
+    // Generate UPI QR with amount
+    function generateQR(amount) {
+      const upiUrl = `upi://pay?pa=anon@upi&pn=AnONStore&am=${amount}&cu=INR`;
+      document.getElementById('qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(upiUrl)}&size=200x200`;
+    }
+
+    generateQR(total);
+
+    function confirmPayment() {
+      alert("Payment Confirmed! Your order has been placed.");
+      localStorage.removeItem('cart');
+      localStorage.removeItem('cartTotal');
+      window.location.href = '/FrontEnd/index.html';
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

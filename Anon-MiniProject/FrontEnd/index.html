@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANON</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/FrontEnd/images/logo/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <section id="header">
+    <a href="#" id="logo"><img src="images/logo/logo.svg" alt=""></a>
+    <ul id="navbar">
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="/FrontEnd/Shop.html">Shop</a></li>
+      <li><a href="/FrontEnd/about.html">About</a></li>
+      <li><a href="/FrontEnd/contact.html">Contact</a></li>
+      <li><a href="/FrontEnd/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      <li id="navbar-auth"><a href="#" id="signin-link">Sign In</a></li>
+    </ul>
+  </section>
+
+<!-- //Form -->
+<div id="authModal" style="display: none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%);
+background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;border-radius: 10px;">
+
+<!-- Sign In Form -->
+<div id="signinForm">
+  <h2>Sign In</h2>
+  <form id="signinFormData">
+    <input type="email" id="signinEmail" placeholder="Email" required><br>
+    <input type="password" id="signinPassword" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+    <button type="button" id="closeSignin">Close</button>
+  </form>
+  <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+</div>
+
+<!-- Register Form -->
+<div id="registerForm" style="display: none;">
+  <h2>Register</h2>
+  <form id="registerFormData">
+    <input type="text" id="registerName" placeholder="Name" required><br>
+    <input type="email" id="registerEmail" placeholder="Email" required><br>
+    <input type="password" id="registerPassword" placeholder="Password" required><br>
+    <button type="submit">Register</button>
+    <button type="button" id="closeRegister">Close</button>
+  </form>
+  <p>Already have an account? <a href="#" id="showSignin">Sign in here</a></p>
+</div>
+</div>
+
+<section id="hero">
+    <h4>Trade-in-offer</h4>
+    <h2>Super value deals</h2>
+    <h1>On all products</h1>
+    <p>Save more with coupons and upto 70% off!</p>
+    <button><a style="color: azure;text-decoration: none;" href="/FrontEnd/Shop.html">Shop Now</a></button>
+  </section>
+
+  <section id="features" class="section-p1">
+    <div class="fe-box">
+      <img src="img/features/f1.png" alt="">
+      <h6>Free Shipping</h6>
+    </div>
+    <div class="fe-box">
+      <img src="img/features/f2.png" alt="">
+      <h6>Online Order</h6>
+    </div>
+    <div class="fe-box">
+      <img src="img/features/f3.png" alt="">
+      <h6>Save Money</h6>
+    </div>
+    <div class="fe-box">
+      <img src="img/features/f4.png" alt="">
+      <h6>Promotions</h6>
+    </div>
+    <div class="fe-box">
+      <img src="img/features/f5.png" alt="">
+      <h6>Happy Sell</h6>
+    </div>
+    <div class="fe-box">
+      <img src="img/features/f6.png" alt="">
+      <h6>F24/7 Support</h6>
+    </div>
+  </section>
+
+
+  <section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <p>Summer Collection new modern design</p>
+    <div class="pro-container">
+      <div class="pro" data-id="1">
+        <img src="img/products/f1.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.899</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="2">
+        <img src="img/products/f2.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.800</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="3">
+        <img src="img/products/f3.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.850</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="4">
+        <img src="img/products/f4.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.870</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro"  data-id="5">
+        <img src="img/products/f5.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.950</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="6">
+        <img src="img/products/f6.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.999</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="7">
+        <img src="images/products/jacket-1.jpg" class="jacket-1">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.1999</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="8">
+        <img src="images/products/jacket-2.jpg" class="jacket-2" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Cartoon Astraunauts T-shirts</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.1999</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <section id="banner" class="section-m1">
+    <h4>Rapid Services</h4>
+    <h2>Up to <span>70% Off</span>-All T-shirts & Accessories</h2>
+    <button class="normal">Explore More</button>
+  </section>
+
+
+  <section id="product1" class="section-p1" data-id="9">
+    <h2>New Arrivals</h2>
+    <p>Summer Collection new modern design</p>
+    <div class="pro-container">
+      <div class="pro">
+        <img src="img/products/n1.jpg" alt="">
+        <div class="des">
+          <span>Beyoung</span>
+          <h5>Cotton Shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.499</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="10">
+        <img src="img/products/n2.jpg" alt="">
+        <div class="des">
+          <span>Local Nation</span>
+          <h5>Cotton fabric shirt 100% cotton</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.800</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="11">
+        <img src="img/products/n3.jpg" alt="">
+        <div class="des">
+          <span>Spykar</span>
+          <h5>Plain white shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.550</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="12">
+        <img src="img/products/n4.jpg" alt="">
+        <div class="des">
+          <span>No Nasties</span>
+          <h5>Half Sleeves Shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.400</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro"  data-id="13">
+        <img src="img/products/n5.jpg" alt="">
+        <div class="des">
+          <span>Arvind Limites</span>
+          <h5>Over-sized shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.400</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="14">
+        <img src="img/products/n6.jpg" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Short pant</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.699</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="15">
+        <img src="img/products/n7.jpg" class="jacket-1">
+        <div class="des">
+          <span>Awalistic Memorizer</span>
+          <h5>Classy Shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.499</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+      <div class="pro" data-id="16">
+        <img src="img/products/n8.jpg" class="jacket-2" alt="">
+        <div class="des">
+          <span>adidas</span>
+          <h5>Over-sized Half Sleeves Shirt</h5>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Rs.699</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart add-to-cart"></i></a>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <section id="bm-banner" class="section-p1">
+    <div class="banner-box">
+      <h4>Crazy deals</h4>
+      <h2>buy 1 get 1 free</h2>
+      <span>The best Classic dress is on sale at Anon</span>
+      <button class="normal">Learn More</button>
+    </div>
+    <div class="banner-box banner-box2">
+      <h4>Sprig/Summer</h4>
+      <h2>Upcoming Season</h2>
+      <span>The best Classic dress is on sale at Anon</span>
+      <button class="normal">Collection</button>
+    </div>
+  </section>
+
+  <section id="banner3">
+    <div class="banner-box">
+      <h2>SEASONAL SALE</h2>
+      <h3>Jwelleries -50% OFF</h3>
+    </div>
+    <div class="banner-box box2">
+      <h2>SEASONAL SALE</h2>
+      <h3>Winter collection -50% OFF</h3>
+    </div>
+    <div class="banner-box box3">
+      <h2>SEASONAL SALE</h2>
+      <h3>Summer Collection -50% OFF</h3>
+    </div>
+  </section>
+
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Sign Up for Newsletter</h4>
+      <p>Get e-mail updates sbout our latest shop and <span>specail offers</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your e-mail address">
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="images/logo/logo.svg " alt="">
+      <h4>Contact</h4>
+      <p><strong>Phone:</strong>7264858117</p>
+      <p><strong>e-mail:</strong>anon123@gmail.com</p>
+      <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h4>About</h4>
+      <a href="/FrontEnd/about.html">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & conditions</a>
+      <a href="/FrontEnd/contact.html">Contact Us</a>
+    </div>
+
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign in</a>
+      <a href="/FrontEnd/cart.html">View Cart</a>
+      <a href="#">Track my order</a>
+      <a href="#">Help</a>
+    </div>
+
+    <div class="col install">
+      <h4>Install app</h4>
+      <p>From App store or Google Play</p>
+      <div class="row">
+        <img src="img/pay/app.jpg" alt="">
+        <img src="img/pay/play.jpg" alt="">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <a href="payment.html"><img src="img/pay/pay.png" alt=""></a>
+    </div>
+  </footer>
+
+
+
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
