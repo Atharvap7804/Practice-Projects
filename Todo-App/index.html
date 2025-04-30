@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+    }
+  
+    .todo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    #todo-input {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+  
+    #add-todo {
+      padding: 10px 15px;
+      margin-left: 10px;
+      margin-top: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  
+    #add-todo:hover {
+      background-color: #0056b3;
+    }
+  
+    #todo-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+  
+    #todo-list li {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+  
+    #todo-list li button {
+      background-color: transparent;
+      border: none;
+      color: red;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  
+    #todo-list li button:hover {
+      color: darkred;
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="todo-container" class="todo">
+    <h2>Todo List</h2>
+    <input type="text" id="todo-input" placeholder="Add a new todo" />
+    <button id="add-todo">Add Todo</button>
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
